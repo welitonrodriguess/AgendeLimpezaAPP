@@ -1,0 +1,7 @@
+com\agendelimpeza\repository\ProfissionalRepository.class
+com\agendelimpeza\controller\AgendamentoController.class
+com\agendelimpeza\AgendeLimpezaApplication.class
+com\agendelimpeza\controller\ProfissionalController.class
+com\agendelimpeza\model\Profissional.class
+com\agendelimpeza\repository\AgendamentoRepository.class
+com\agendelimpeza\model\Agendamento.class

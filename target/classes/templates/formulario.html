@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendar Limpeza</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>🧹 Agende sua limpeza</h1>
+
+    <form th:action="@{${agendamento.id} != null ? '/agendamentos/atualizar/' + ${agendamento.id} : '/agendamentos/salvar'}"
+          th:object="${agendamento}" method="post">
+
+        <label>Cliente:</label>
+        <input type="text" th:field="*{cliente}" required><br><br>
+
+        <label>Serviço:</label>
+        <input type="text" th:field="*{servico}" required><br><br>
+
+        <label>Data e Hora:</label>
+        <input type="datetime-local" th:field="*{dataHora}" required><br><br>
+
+        <div th:if="${profissionalSelecionado != null}">
+            <p><strong>Profissional:</strong> <span th:text="${profissionalSelecionado.nome}"></span> - 
+            R$ <span th:text="${profissionalSelecionado.valorHora}"></span>/hora</p>
+            <input type="hidden" th:field="*{profissional}" th:value="${profissionalSelecionado.id}">
+        </div>
+
+        <button type="submit">💾 Salvar</button>
+    </form>
+
+    <br>
+    <a href="/agendamentos/lista">⬅ Voltar para Lista</a>
+</div>
+</body>
+</html>

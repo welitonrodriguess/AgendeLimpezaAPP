@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profissionais disponíveis</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>🧑‍🔧 Profissionais em <span th:text="${cidade}"></span></h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Valor/hora</th>
+                <th>Horários disponíveis</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="prof : ${profissionais}">
+                <td th:text="${prof.nome}"></td>
+                <td th:text="${prof.valorHora} + ' R$'"></td>
+                <td>
+                    <ul>
+                        <li th:each="hora : ${prof.horariosDisponiveis}" th:text="${hora}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <a th:href="@{'/agendamentos/novo?profissional=' + ${prof.id}}">📅 Agendar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="/agendamentos/lista">⬅ Voltar</a>
+    </div>
+</div>
+</body>
+</html>
