@@ -33,15 +33,13 @@ Estabeleça padrões de qualidade no serviço.
 
 🛠️ Tecnologias Utilizadas
 
-(ajuste aqui conforme seu stack atual, por exemplo):
-
 Java / Spring Boot
 
 PostgreSQL
 
 Docker
 
-React Native (ou outra solução mobile futura)
+React Native 
 
 📌 Status do Projeto
 
