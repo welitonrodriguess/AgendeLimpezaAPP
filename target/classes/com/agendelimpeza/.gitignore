@@ -1,0 +1,37 @@
+# Arquivos de build
+/target/
+/build/
+/out/
+
+# Configurações locais de IDE
+/.idea/
+/.vscode/
+/*.iml
+/.project
+/.classpath
+/.settings/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependências baixadas
+/node_modules/
+/.mvn/
+/.gradle/
+
+# Arquivos temporários
+*.tmp
+*.bak
+*.swp
+
+# Credenciais e configs locais
+application-*.yml
+application-*.properties
+
+# Arquivos do Windows
+ehthumbs.db
+Desktop.ini
