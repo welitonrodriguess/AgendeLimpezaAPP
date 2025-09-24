@@ -1,19 +1,20 @@
-// Pacote: com.agendelimpeza.controller
 package com.agendelimpeza.controller;
 
-import com.agendelimpeza.model.Agendamento; // Supondo que você tenha essa classe
-import com.agendelimpeza.repository.AgendamentoRepository; // Supondo que você tenha esse repositório
-import org.springframework.beans.factory.annotation.Autowired;
+import com.agendelimpeza.model.Agendamento;
+import com.agendelimpeza.repository.AgendamentoRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/agendamentos") // Padrão de URL para sua API
+@RequestMapping("/api/agendamentos")
 public class AgendamentoController {
 
-    @Autowired
-    private AgendamentoRepository repository;
+    private final AgendamentoRepository repository;
+
+    public AgendamentoController(AgendamentoRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping
     public List<Agendamento> listarTodos() {

@@ -1,4 +1,4 @@
-// src/main/java/com/agendelimpeza/config/CorsConfig.java
+
 package com.agendelimpeza.config;
 
 import org.springframework.context.annotation.Configuration;
